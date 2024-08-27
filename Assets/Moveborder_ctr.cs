@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR;
+using Valve.VR.InteractionSystem;
 
 public class Moveborder_ctr : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class Moveborder_ctr : MonoBehaviour
     [SerializeField] private Transform targetObject_rotation;
 
     [SerializeField] private float Move_Resistance;
+    [SerializeField] private float Key_Move_Speed = 0.1f;
 
     private Vector3 lastControllerPosition;
 
@@ -51,6 +53,14 @@ public class Moveborder_ctr : MonoBehaviour
 
             // コントローラーの位置を更新
             lastControllerPosition = currentControllerPosition;
+        }
+        else if(Input.GetKey(KeyCode.A)){
+
+            // オブジェクトがターゲットに向かって移動する方向を計算
+            Vector3 directionToTarget = (targetObject.position - this.transform.position).normalized;
+
+            // オブジェクトを動かす
+            this.transform.position += directionToTarget * Move_Resistance * Key_Move_Speed;
         }
         else
         {

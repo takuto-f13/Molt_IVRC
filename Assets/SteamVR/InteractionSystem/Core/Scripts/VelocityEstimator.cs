@@ -122,8 +122,9 @@ namespace Valve.VR.InteractionSystem
 		{
 			sampleCount = 0;
 
-			Vector3 previousPosition = transform.position;
-			Quaternion previousRotation = transform.rotation;
+			//Change to localPosition from position (& rotation)
+			Vector3 previousPosition = transform.localPosition;
+			Quaternion previousRotation = transform.localRotation;
 			while ( true )
 			{
 				yield return new WaitForEndOfFrame();
@@ -135,10 +136,10 @@ namespace Valve.VR.InteractionSystem
 				sampleCount++;
 
 				// Estimate linear velocity
-				velocitySamples[v] = velocityFactor * ( transform.position - previousPosition );
+				velocitySamples[v] = velocityFactor * ( transform.localPosition - previousPosition );
 
 				// Estimate angular velocity
-				Quaternion deltaRotation = transform.rotation * Quaternion.Inverse( previousRotation );
+				Quaternion deltaRotation = transform.localRotation * Quaternion.Inverse( previousRotation );
 
 				float theta = 2.0f * Mathf.Acos( Mathf.Clamp( deltaRotation.w, -1.0f, 1.0f ) );
 				if ( theta > Mathf.PI )
@@ -154,8 +155,8 @@ namespace Valve.VR.InteractionSystem
 
 				angularVelocitySamples[w] = angularVelocity;
 
-				previousPosition = transform.position;
-				previousRotation = transform.rotation;
+				previousPosition = transform.localPosition;
+				previousRotation = transform.localRotation;
 			}
 		}
 	}
