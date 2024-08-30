@@ -10,6 +10,8 @@ public class PeelSoundAcceleration_ctr : MonoBehaviour
 
     public bool CheckUpper_Threshold = false;
 
+    [SerializeField] AddEffect SetVelocity;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,13 +26,15 @@ public class PeelSoundAcceleration_ctr : MonoBehaviour
 
         float Acceleration = VE.GetAccelerationEstimate().magnitude / Acc_threshold;
         float Velocity = VE.GetVelocityEstimate().x / Acc_threshold;
-
+        
         if (Acceleration > 1.0f)
         {
             CheckUpper_Threshold=true;
             Acceleration = 1.0f;
         }
-        Debug.Log(Acceleration);
+        //Debug.Log(Acceleration);
+
+        SetVelocity.SetAcc_Velocity = Acceleration;
 
         //‰¹—Ê‚Ì•Ï‰»
         GetComponent<AudioSource>().volume = Acceleration;
