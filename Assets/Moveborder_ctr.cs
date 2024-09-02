@@ -16,7 +16,10 @@ public class Moveborder_ctr : MonoBehaviour
     [SerializeField] private float Move_Resistance;
     [SerializeField] private float Key_Move_Speed = 0.1f;
 
+    [SerializeField] private ChangeParent ChangeParent;
+
     private Vector3 lastControllerPosition;
+    private bool EndPoint = false;
 
     // Start is called before the first frame update
     void Start()
@@ -51,6 +54,13 @@ public class Moveborder_ctr : MonoBehaviour
             // オブジェクトを動かす
             this.transform.position += directionToTarget * movement.magnitude;
 
+            //Debug.Log(Vector3.Distance(targetObject.position, this.transform.position));
+            if (Vector3.Distance(targetObject.position, this.transform.position) < 0.15)
+            {
+                Debug.Log("on");
+                EndPoint = true;
+            }
+
             // コントローラーの位置を更新
             lastControllerPosition = currentControllerPosition;
         }
@@ -67,5 +77,6 @@ public class Moveborder_ctr : MonoBehaviour
             // トリガーが押されていない場合、コントローラーの位置を更新しておく
             lastControllerPosition = controllerPose.transform.localPosition;
         }
+        ChangeParent.IsChanged = EndPoint;
     }
 }

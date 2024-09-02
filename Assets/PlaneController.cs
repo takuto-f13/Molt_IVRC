@@ -23,7 +23,7 @@ public class PlaneController : MonoBehaviour
     private DateTime t_0;
 
     private float Sag = 0.0f;
-
+    private bool EndCheck = false;
     // Start is called before the first frame update
     void Awake()
     {
@@ -44,14 +44,23 @@ public class PlaneController : MonoBehaviour
     {
         TimeSpan t = DateTime.Now - t_0;
         double omega = 0.01;
-        double A = a * Math.Sin(omega * t.TotalMilliseconds);
-        double B = b * Math.Sin(omega * t.TotalMilliseconds);
         //a = 1.0f;
         //b = 0.0f;
 
         //Debug.Log("Sag :" + Sag);
+        float a_1 = a - Sag / 5;
 
-        Deform(a - Sag / 5, b);
+        if (EndCheck)
+        {
+            double A = a_1 * Math.Sin(omega * t.TotalMilliseconds);
+            double B = b * Math.Sin(omega * t.TotalMilliseconds);
+
+            Deform((float)a_1, (float)B);
+        }
+        else
+        {
+            Deform(a_1, b);
+        }
     }
     void Deform(float a, float b)
     {
@@ -128,6 +137,13 @@ public class PlaneController : MonoBehaviour
 
         get { return this.Sag; }  //取得用
         set { this.Sag = value; } //値入力用
+    }
+
+    public bool EndPoint
+    {
+
+        get { return this.EndCheck; }  //取得用
+        set { this.EndCheck = value; } //値入力用
     }
 }
 
