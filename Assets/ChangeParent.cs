@@ -6,6 +6,7 @@ public class ChangeParent : MonoBehaviour
     [SerializeField] private SkinPeel_ctr skinPeel_Ctr;
     [SerializeField] private PlaneController PlaneController;
     [SerializeField] private Moveborder_ctr moveborder_ctr;
+    [SerializeField] private GameObject cloth_skin;
 
     private bool changeParent = false; // ‚±‚Ìbool‚ªtrue‚É‚È‚Á‚½‚çe‚ğ•ÏX
 
@@ -13,6 +14,7 @@ public class ChangeParent : MonoBehaviour
     {
         if (changeParent && newParent != null)
         {
+            cloth_skin.SetActive(true);
             Debug.Log("StopMovement");
 
             skinPeel_Ctr.enabled = false;
