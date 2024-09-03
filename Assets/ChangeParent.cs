@@ -17,6 +17,7 @@ public class ChangeParent : MonoBehaviour
             cloth_skin.SetActive(true);
             Debug.Log("StopMovement");
 
+            GetComponent<MeshRenderer>().enabled = false;
             skinPeel_Ctr.enabled = false;
             //PlaneController.enabled = false;  
             moveborder_ctr.enabled = false;
