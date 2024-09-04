@@ -17,12 +17,8 @@ Material:
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
-  stringTagMap:
-    MotionVector: User
-  disabledShaderPasses:
-  - DistortionVectors
-  - MOTIONVECTORS
-  - TransparentBackface
+  stringTagMap: {}
+  disabledShaderPasses: []
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
@@ -165,12 +161,8 @@ Material:
     - CZY_SunFlareFalloff: 1
     - LightIntensity1: 1
     - _AlphaCutoff: 0.5
-    - _AlphaCutoffEnable: 0
-    - _AlphaDstBlend: 0
-    - _AlphaSrcBlend: 1
     - _AltocumulusMultiplier: 2
     - _AltocumulusScale: 1
-    - _BlendMode: 0
     - _BorderEffect: 0
     - _BorderHeight: 1
     - _BorderVariation: 1
@@ -186,20 +178,12 @@ Material:
     - _CloudTextureChangeSpeed: 1
     - _CloudTextureMultiplier: 1
     - _CloudThickness1: 1
-    - _CullMode: 1
-    - _CullModeForward: 1
     - _CumulusCoverageMultiplier: 1
     - _Cutoff: 0.5
     - _DetailAmount: 20.22
     - _DetailNormalMapScale: 1
     - _DetailScale: 2.3
-    - _DistortionEnable: 0
-    - _DistortionOnly: 0
-    - _DoubleSidedEnable: 0
-    - _DoubleSidedGIMode: 0
-    - _DoubleSidedNormalMode: 2
     - _DstBlend: 0
-    - _EnableFogOnTransparent: 1
     - _EnvironmentReflections: 1
     - _GalaxyMultiplier: 0.05369039
     - _GlossMapScale: 1
@@ -217,7 +201,6 @@ Material:
     - _NimbusVariation: 1
     - _OcclusionStrength: 1
     - _Offset: 0
-    - _OpaqueCullMode: 1
     - _Parallax: 0.02
     - _PatchworkAmount: 1
     - _PatchworkBias: 0.105
@@ -232,39 +215,14 @@ Material:
     - _RainbowSize: 16.8
     - _RainbowWidth: 24.3
     - _ReceiveShadows: 1
-    - _ReceivesSSR: 1
-    - _ReceivesSSRTransparent: 0
-    - _RenderQueueType: 1
-    - _RequireSplitLighting: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _StencilRef: 0
-    - _StencilRefDepth: 0
-    - _StencilRefDistortionVec: 4
-    - _StencilRefGBuffer: 2
-    - _StencilRefMV: 32
-    - _StencilWriteMask: 6
-    - _StencilWriteMaskDepth: 8
-    - _StencilWriteMaskDistortionVec: 4
-    - _StencilWriteMaskGBuffer: 14
-    - _StencilWriteMaskMV: 40
     - _SunFlareFalloff: 90.9
     - _SunSize: 1
-    - _SupportDecals: 1
-    - _SurfaceType: 0
     - _TextureAmount: 1
-    - _TransparentBackfaceEnable: 0
-    - _TransparentCullMode: 2
-    - _TransparentSortPriority: 0
-    - _TransparentWritingMotionVec: 0
-    - _TransparentZWrite: 0
     - _UVSec: 0
-    - _UseShadowThreshold: 0
     - _WindSpeed: 3
-    - _ZTestDepthEqualForOpaque: 3
-    - _ZTestGBuffer: 4
-    - _ZTestTransparent: 4
     - _ZWrite: 1
     - __dirty: 1
     m_Colors:
@@ -275,8 +233,7 @@ Material:
     - _CloudTextureColor: {r: 0.9056604, g: 0.9056604, b: 0.9056604, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Color0: {r: 0.4113119, g: 0.745283, b: 0.4412026, a: 1}
-    - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
-    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _GalaxyColor1: {r: 1, g: 0, b: 0.6574917, a: 1}
     - _GalaxyColor2: {r: 0.4681289, g: 0.4470588, b: 1, a: 1}
     - _GalaxyColor3: {r: 0, g: 0.84153175, b: 1, a: 1}
@@ -293,6 +250,5 @@ Material:
     - _SunColor1: {r: 10.43295, g: 10.43295, b: 10.43295, a: 0}
     - _SunDirection: {r: -0.05530402, g: -0.97433305, b: -0.21821257, a: 0}
     - _SunFlareColor: {r: 0.52377915, g: 0.43413693, b: 0.32312402, a: 1}
-    - _UnlitColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
     - _ZenithColor: {r: 0.008499811, g: 0.047379583, b: 0.11567971, a: 1}
   m_BuildTextureStacks: []

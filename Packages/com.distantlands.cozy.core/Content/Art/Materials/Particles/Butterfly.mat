@@ -11,7 +11,7 @@ Material:
   m_Shader: {fileID: 4800000, guid: ada8ed7950ffe1f49ba571a0849bb3b3, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
-  m_LightmapFlags: 2
+  m_LightmapFlags: 6
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -94,7 +94,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AlphaClipThreshold: 0
+    - _AlphaClipThreshold: 0.81
     - _AlphaCutoff: 0.5
     - _BumpScale: 1
     - _Cutoff: 0.5

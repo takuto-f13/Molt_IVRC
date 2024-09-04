@@ -12,20 +12,13 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
-  m_InvalidKeywords:
-  - _ADD_PRECOMPUTED_VELOCITY
-  - _ALPHATEST_ON
-  - _ENABLE_FOG_ON_TRANSPARENT
-  - _SURFACE_TYPE_TRANSPARENT
+  m_InvalidKeywords: []
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
-  stringTagMap:
-    MotionVector: User
-  disabledShaderPasses:
-  - DistortionVectors
-  - TransparentBackface
+  stringTagMap: {}
+  disabledShaderPasses: []
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
@@ -199,18 +192,13 @@ Material:
     - CZY_ChemtrailsMultiplier: 2
     - CZY_LuxuryVariationAmount: 43.14
     - _ACScale: 0.5
-    - _AddPrecomputedVelocity: 1
     - _AlphaClip: 0
     - _AlphaCutoff: 0.5
-    - _AlphaCutoffEnable: 1
-    - _AlphaDstBlend: 10
-    - _AlphaSrcBlend: 1
     - _AltoCumulusMultiplier: 1
     - _AltoCumulusScale: 0.5
     - _AltocumulusMultiplier: 0.51
     - _AltocumulusScale: 0.67
     - _Angle: 0.671
-    - _BlendMode: 0
     - _BorderCloudsAmount: 1
     - _BorderCloudsAmount1: 1
     - _BorderEffect: 1
@@ -247,8 +235,6 @@ Material:
     - _Coverage1: 0
     - _CrystalEffect: 0
     - _CrystalScale: 0
-    - _CullMode: 2
-    - _CullModeForward: 2
     - _CumulusCloudsAmount: 0.244
     - _CumulusCoverage: 1
     - _CumulusCoverageMultiplier: 0
@@ -258,13 +244,7 @@ Material:
     - _DetailAmount: 25
     - _DetailNormalMapScale: 1
     - _DetailScale: 1.5
-    - _DistortionEnable: 0
-    - _DistortionOnly: 0
-    - _DoubleSidedEnable: 0
-    - _DoubleSidedGIMode: 0
-    - _DoubleSidedNormalMode: 2
-    - _DstBlend: 10
-    - _EnableFogOnTransparent: 1
+    - _DstBlend: 0
     - _EnvironmentReflections: 1
     - _Flatness: 20
     - _Flatness1: 1.9
@@ -293,7 +273,6 @@ Material:
     - _NimbusVariation: 0.945
     - _NoiseScale: 0.1
     - _OcclusionStrength: 1
-    - _OpaqueCullMode: 2
     - _OvercastScale: 2
     - _Parallax: 0.02
     - _PartlyCloudyScale: 2
@@ -301,10 +280,6 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _ReceivesSSR: 1
-    - _ReceivesSSRTransparent: 0
-    - _RenderQueueType: 4
-    - _RequireSplitLighting: 0
     - _Scale: 1
     - _Scale1: 6.9
     - _Scale2: 32.7
@@ -318,20 +293,8 @@ Material:
     - _Spherize: 1
     - _Spherize1: 0.7351663
     - _SrcBlend: 1
-    - _StencilRef: 0
-    - _StencilRefDepth: 0
-    - _StencilRefDistortionVec: 4
-    - _StencilRefGBuffer: 2
-    - _StencilRefMV: 32
-    - _StencilWriteMask: 6
-    - _StencilWriteMaskDepth: 8
-    - _StencilWriteMaskDistortionVec: 4
-    - _StencilWriteMaskGBuffer: 14
-    - _StencilWriteMaskMV: 40
     - _SunFlareFalloff: 8.337856
     - _SunFlareFalloff1: 0.2
-    - _SupportDecals: 1
-    - _SurfaceType: 1
     - _TImeOffset: 0
     - _TextureAmount: 0.48
     - _Threshold: 0.21
@@ -341,19 +304,10 @@ Material:
     - _TransScattering: 7.2
     - _TransShadow: 0.9
     - _Translucency: 3.7
-    - _TransparentBackfaceEnable: 0
-    - _TransparentCullMode: 2
-    - _TransparentSortPriority: 0
-    - _TransparentWritingMotionVec: 0
-    - _TransparentZWrite: 0
     - _UVSec: 0
-    - _UseShadowThreshold: 0
     - _WindSpeed: 0.75
     - _WindSpeed1: 0
-    - _ZTestDepthEqualForOpaque: 4
-    - _ZTestGBuffer: 3
-    - _ZTestTransparent: 4
-    - _ZWrite: 0
+    - _ZWrite: 1
     - __dirty: 1
     m_Colors:
     - _ACWindSpeed: {r: -0.1, g: 0.5, b: 0, a: 0}
@@ -381,8 +335,7 @@ Material:
     - _DenseOvercastOffset: {r: 0, g: 0, b: 0, a: 0}
     - _DetailWind: {r: 0.3, g: 0.8, b: 0, a: 0}
     - _DistantCloudsColor: {r: 0.627451, g: 0.91146094, b: 1, a: 0}
-    - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
-    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _LightCloudColor: {r: 1, g: 1, b: 1, a: 0}
     - _MainCloudWindDir: {r: 0.3, g: 0.1, b: 0, a: 0}
     - _MainCloudWindDir1: {r: 0.1, g: 0.2, b: 0, a: 0}
@@ -400,6 +353,5 @@ Material:
     - _SunDirection: {r: -0.24941644, g: 0.937376, b: -0.24314111, a: 0}
     - _SunDirection1: {r: 0, g: 0, b: 0, a: 0}
     - _TexturePanDirection: {r: 0.1, g: 1, b: 0.1, a: 0}
-    - _UnlitColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
     - _Vector0: {r: 0.12, g: 1.5, b: 0, a: 0}
   m_BuildTextureStacks: []
