@@ -6,28 +6,18 @@ public class ChangeAvatar : MonoBehaviour
 {
     [SerializeField] private int _ChangeAvatar = 0;
 
-    [SerializeField] private GameObject TestAvatar0;
-    [SerializeField] private GameObject Avatar1;
-    [SerializeField] private GameObject Avatar2;
-    [SerializeField] private GameObject Avatar3;
+    [SerializeField] private GameObject [] Avatar;
 
     // Start is called before the first frame update
     void Awake()
     {
-        switch (_ChangeAvatar)
+        if(_ChangeAvatar < 0 ||  _ChangeAvatar >= Avatar.Length)
         {
-            case 0:
-                TestAvatar0.SetActive(true);
-                break;
-            case 1:
-                Avatar1.SetActive(true);
-                break;
-            case 2:
-                Avatar2.SetActive(true);
-                break;
-            case 3:
-                Avatar3.SetActive(true);
-                break;
+            Debug.Log("Only Avatar number");
+            _ChangeAvatar = 0;
         }
+
+        for (int i = 0; i < Avatar.Length; i++) { Avatar[i].SetActive(false); }
+        Avatar[_ChangeAvatar].SetActive(true);
     }
 }
