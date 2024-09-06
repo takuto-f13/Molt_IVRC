@@ -52,4 +52,9 @@ public class ChangeWeather : MonoBehaviour
 
         ApplyWeatherProfile(weatherProfiles[index]);
     }
+    public int ChangeWeatherNumber
+    {
+        get { return _ChangeWeather; }
+        set { _ChangeWeather = value; }
+    }
 }
