@@ -66,7 +66,7 @@ public class RestartScenes : MonoBehaviour
 
         if (PlayerPrefs.HasKey("Time"))
         {
-            _ChangeWeather.ChangeWeatherNumber = PlayerPrefs.GetInt("");
+            _ChangeWeather.ChangeTimeNumber = PlayerPrefs.GetInt("Time");
         }
     }
 
