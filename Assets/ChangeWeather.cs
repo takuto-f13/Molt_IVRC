@@ -85,7 +85,7 @@ public class ChangeWeather : MonoBehaviour
             float hours = timePercentage * 24;
             int hourPart = Mathf.FloorToInt(hours);
             int minutePart = Mathf.FloorToInt((hours - hourPart) * 60);
-            Debug.Log($"Now Time: {hourPart:D2}:{minutePart:D2}");
+            //Debug.Log($"Now Time: {hourPart:D2}:{minutePart:D2}");
         }
         else
         {
@@ -116,5 +116,10 @@ public class ChangeWeather : MonoBehaviour
     {
         get { return _ChangeWeather; }
         set { _ChangeWeather = value; }
+    }
+    public int ChangeTimeNumber
+    {
+        get { return _ChangeTime; }
+        set { _ChangeTime = value; }
     }
 }

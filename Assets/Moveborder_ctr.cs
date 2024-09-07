@@ -57,7 +57,7 @@ public class Moveborder_ctr : MonoBehaviour
             //Debug.Log(Vector3.Distance(targetObject.position, this.transform.position));
             if (Vector3.Distance(targetObject.position, this.transform.position) < 0.15)
             {
-                Debug.Log("on");
+                //Debug.Log("on");
                 EndPoint = true;
             }
 

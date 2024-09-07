@@ -26,7 +26,7 @@ public class ChangeAvatar : MonoBehaviour
     }
     void Update()
     {
-        Debug.Log(_ChangeAvatar + "script");
+        //Debug.Log(_ChangeAvatar + "script");
         if (_ChangeAvatar != _TempAvatarIndex)
         {
             if (_ChangeAvatar < 0 || _ChangeAvatar >= Avatar.Length)

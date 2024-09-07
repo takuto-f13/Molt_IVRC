@@ -15,7 +15,7 @@ public class ChangeParent : MonoBehaviour
         if (changeParent && newParent != null)
         {
             cloth_skin.SetActive(true);
-            Debug.Log("StopMovement");
+            //Debug.Log("StopMovement");
 
             GetComponent<MeshRenderer>().enabled = false;
             skinPeel_Ctr.enabled = false;
