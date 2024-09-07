@@ -8,9 +8,11 @@ public class ChangeWeather : MonoBehaviour
 {
     //Reference module
     private CozyWeatherModule weatherModule;
-    [SerializeField] private List<WeatherProfile> weatherProfiles;
+    private CozyTimeModule cozyTimeModule;
 
+    [SerializeField] private List<WeatherProfile> weatherProfiles;
     [SerializeField] private int _ChangeWeather = 0;
+    [SerializeField] private int _ChangeTime = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,12 +21,32 @@ public class ChangeWeather : MonoBehaviour
         {
             ApplyWeatherProfile(weatherProfiles[0]);
         }
+        cozyTimeModule = FindObjectOfType<CozyTimeModule>();
+        ApplyCozyTime(0.5f);
     }
 
     // Update is called once per frame
     void Update()
     {
         ChangeWeatherByIndex(_ChangeWeather);
+        if (_ChangeTime >= 0 && _ChangeTime < 5)
+        {
+            switch (_ChangeTime)
+            {
+                case 0:
+                    UpdateTimeToMorning();
+                    break;
+                case 1:
+                    UpdateTimeToNoon();
+                    break;
+                case 2:
+                    UpdateTimeToEvening();
+                    break;
+                case 3:
+                    UpdateTimeToNight();
+                    break;
+            }
+        }
     }
 
     public void ApplyWeatherProfile(WeatherProfile profile)
@@ -52,6 +74,44 @@ public class ChangeWeather : MonoBehaviour
 
         ApplyWeatherProfile(weatherProfiles[index]);
     }
+    public void ApplyCozyTime(float timePercentage)
+    {
+        if (cozyTimeModule != null)
+        {
+            timePercentage = Mathf.Clamp01(timePercentage);
+
+            cozyTimeModule.currentTime = timePercentage;
+
+            float hours = timePercentage * 24;
+            int hourPart = Mathf.FloorToInt(hours);
+            int minutePart = Mathf.FloorToInt((hours - hourPart) * 60);
+            Debug.Log($"Now Time: {hourPart:D2}:{minutePart:D2}");
+        }
+        else
+        {
+            Debug.LogWarning("No set time");
+        }
+    }
+    public void UpdateTimeToMorning()
+    {
+        ApplyCozyTime(0.25f);
+    }
+
+    public void UpdateTimeToNoon()
+    {
+        ApplyCozyTime(0.5f);
+    }
+
+    public void UpdateTimeToEvening()
+    {
+        ApplyCozyTime(0.75f);
+    }
+
+    public void UpdateTimeToNight()
+    {
+        ApplyCozyTime(0.85f);
+    }
+
     public int ChangeWeatherNumber
     {
         get { return _ChangeWeather; }
