@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class RestartScenes : MonoBehaviour
 {
-    [SerializeField] private string announce = "Space for Restart";
+    [SerializeField] private string _announce = "Space for Restart";
     [SerializeField] private ChangeAvatar _ChangeAvatar;
     [SerializeField] private ChangeWeather _ChangeWeather;
     [SerializeField] private ChangeWeather _ChangeTime;
@@ -43,6 +43,8 @@ public class RestartScenes : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            _announce = "Reload Scene";
+
             PlayerPrefs.SetInt("Avatar", _AvatarIndex);
             PlayerPrefs.SetInt("Weather", _WeatherIndex);
             PlayerPrefs.SetInt("Time", _TimeIndex);

@@ -18,6 +18,9 @@ public class Moveborder_ctr : MonoBehaviour
 
     [SerializeField] private ChangeParent ChangeParent;
 
+    [SerializeField] private bool _MoveDevice = false;
+    public float Movedistance = 2.0f;
+
     private Vector3 lastControllerPosition;
     private bool EndPoint = false;
 
@@ -39,7 +42,7 @@ public class Moveborder_ctr : MonoBehaviour
         this.transform.localEulerAngles = this_rotation;
 
         // トリガーが押されているかどうかを確認
-        if (triggerAction.GetState(handType))
+        if (triggerAction.GetState(handType) && !_MoveDevice)
         {
             // 現在のコントローラーの位置を取得
             Vector3 currentControllerPosition = controllerPose.transform.localPosition;
@@ -66,11 +69,19 @@ public class Moveborder_ctr : MonoBehaviour
         }
         else if(Input.GetKey(KeyCode.A)){
 
-            // オブジェクトがターゲットに向かって移動する方向を計算
             Vector3 directionToTarget = (targetObject.position - this.transform.position).normalized;
 
-            // オブジェクトを動かす
             this.transform.position += directionToTarget * Move_Resistance * Key_Move_Speed;
+        }else if (_MoveDevice)
+        {
+            Vector3 directionToTarget = (targetObject.position - this.transform.position).normalized;
+            this.transform.position += directionToTarget * Movedistance;
+
+            if (Vector3.Distance(targetObject.position, this.transform.position) < 0.15)
+            {
+                //Debug.Log("on");
+                EndPoint = true;
+            }
         }
         else
         {

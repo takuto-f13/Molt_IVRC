@@ -6,7 +6,7 @@ using Valve.VR.InteractionSystem;
 
 public class PeelSoundAcceleration_ctr : MonoBehaviour
 {
-    [SerializeField] private float Acc_threshold = 100f;
+    [SerializeField] private float _Acc_threshold = 100f;
 
     public bool CheckUpper_Threshold = false;
 
@@ -21,18 +21,19 @@ public class PeelSoundAcceleration_ctr : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(CheckUpper_Threshold);
         //‰Á‘¬“x‚ÌŽæ“¾
         VelocityEstimator VE = GetComponent<VelocityEstimator>();
 
-        float Acceleration = VE.GetAccelerationEstimate().magnitude / Acc_threshold;
-        float Velocity = VE.GetVelocityEstimate().x / Acc_threshold;
+        float Acceleration = VE.GetAccelerationEstimate().magnitude / _Acc_threshold;
+        float Velocity = VE.GetVelocityEstimate().x / _Acc_threshold;
         
         if (Acceleration > 1.0f)
         {
             CheckUpper_Threshold=true;
             Acceleration = 1.0f;
         }
-        //Debug.Log(Acceleration);
+        Debug.Log(Acceleration);
 
         SetVelocity.SetAcc_Velocity = Acceleration;
 
