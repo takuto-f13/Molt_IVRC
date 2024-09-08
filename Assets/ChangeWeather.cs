@@ -74,6 +74,7 @@ public class ChangeWeather : MonoBehaviour
 
         ApplyWeatherProfile(weatherProfiles[index]);
     }
+
     public void ApplyCozyTime(float timePercentage)
     {
         if (cozyTimeModule != null)

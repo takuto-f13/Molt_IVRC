@@ -108,7 +108,7 @@ public class SkinPeel_ctr : MonoBehaviour
                     }
 
                     skin_object.localScale = new Vector3(distance, skin_object.localScale.y, skin_object.localScale.z);
-                    skin_object.localPosition = new Vector3(initialPosition.x, initialPosition.y, distance * 3f + border_object.position.z);
+                    skin_object.localPosition = new Vector3(initialPosition.x, initialPosition.y, distance * 4.65f + border_object.position.z);
 
                     break;
             }

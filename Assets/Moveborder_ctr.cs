@@ -68,12 +68,20 @@ public class Moveborder_ctr : MonoBehaviour
             // コントローラーの位置を更新
             lastControllerPosition = currentControllerPosition;
         }
-        else if(Input.GetKey(KeyCode.A)){
+        else if(Input.GetKey(KeyCode.A) && _MoveDevice)
+        {
 
             Vector3 directionToTarget = (targetObject.position - this.transform.position).normalized;
 
             this.transform.position += directionToTarget * Move_Resistance * Key_Move_Speed;
-        }else if (_MoveDevice)
+
+            if (Vector3.Distance(targetObject.position, this.transform.position) < 0.15)
+            {
+                //Debug.Log("on");
+                EndPoint = true;
+            }
+        }
+        else if (_MoveDevice)
         {
             Vector3 directionToTarget = (targetObject.position - this.transform.position).normalized;
             if(_TempMovement != Movedistance)

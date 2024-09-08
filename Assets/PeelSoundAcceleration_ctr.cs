@@ -40,4 +40,9 @@ public class PeelSoundAcceleration_ctr : MonoBehaviour
         //‰¹—Ê‚Ì•Ï‰»
         GetComponent<AudioSource>().volume = Acceleration;
     }
+
+    public bool Miss_Point
+    {
+        get { return CheckUpper_Threshold; }
+    }
 }
