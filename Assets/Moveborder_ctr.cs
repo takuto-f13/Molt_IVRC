@@ -19,7 +19,8 @@ public class Moveborder_ctr : MonoBehaviour
     [SerializeField] private ChangeParent ChangeParent;
 
     [SerializeField] private bool _MoveDevice = false;
-    public float Movedistance = 2.0f;
+    public float Movedistance = 0.1f;
+    private float _TempMovement = 0.0f;
 
     private Vector3 lastControllerPosition;
     private bool EndPoint = false;
@@ -75,7 +76,11 @@ public class Moveborder_ctr : MonoBehaviour
         }else if (_MoveDevice)
         {
             Vector3 directionToTarget = (targetObject.position - this.transform.position).normalized;
-            this.transform.position += directionToTarget * Movedistance;
+            if(_TempMovement != Movedistance)
+            {
+                this.transform.position += directionToTarget * (Movedistance - _TempMovement) / 100f;
+                _TempMovement = Movedistance;
+            }
 
             if (Vector3.Distance(targetObject.position, this.transform.position) < 0.15)
             {
