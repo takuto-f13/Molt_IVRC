@@ -15,6 +15,8 @@ public class MissPeel : MonoBehaviour
 
     [SerializeField] private GameObject _MissObjPrefab;
 
+    [SerializeField] private ChangeParent _ChangeParent;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +34,7 @@ public class MissPeel : MonoBehaviour
         if(Input.GetKeyUp(KeyCode.Escape))
             _MissCheck = true;
 
-        if(_MissCheck)
+        if(_MissCheck && !_ChangeParent.IsChanged)
         {
             HappenMiss();
         }

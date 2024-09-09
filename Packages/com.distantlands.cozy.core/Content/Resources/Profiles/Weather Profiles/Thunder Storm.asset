@@ -15,9 +15,7 @@ MonoBehaviour:
   minWeatherTime: 0.125
   maxWeatherTime: 0.33333334
   likelihood: 0.554
-  forecastNext:
-  - {fileID: 11400000, guid: 134d60bbf3db4074599790ce6df65c88, type: 2}
-  - {fileID: 11400000, guid: 360273c9c779d1f42a10eee5f070a83a, type: 2}
+  forecastNext: []
   forecastModifierMethod: 0
   chances:
   - limitType: 1
@@ -54,6 +52,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
+    customChanceEffector: {fileID: 0}
   FX:
   - {fileID: 11400000, guid: 37958e75fc835c242a6ab218c3f7c868, type: 2}
   - {fileID: 11400000, guid: 5818af68d3b1bdd47ad057e03bb5f10e, type: 2}

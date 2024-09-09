@@ -11,7 +11,9 @@ public class ChangeWeather : MonoBehaviour
     private CozyTimeModule cozyTimeModule;
 
     [SerializeField] private List<WeatherProfile> weatherProfiles;
-    [SerializeField] private int _ChangeWeather = 0;
+    [SerializeField] private int _ChangeWeather;
+    private int _TempChangeWeather = 0;
+
     [SerializeField] private int _ChangeTime = 0;
     // Start is called before the first frame update
     void Start()
@@ -21,6 +23,9 @@ public class ChangeWeather : MonoBehaviour
         {
             ApplyWeatherProfile(weatherProfiles[0]);
         }
+        ApplyWeatherProfile(weatherProfiles[_ChangeWeather]);
+        _TempChangeWeather = _ChangeWeather;
+
         cozyTimeModule = FindObjectOfType<CozyTimeModule>();
         ApplyCozyTime(0.5f);
     }
@@ -28,6 +33,11 @@ public class ChangeWeather : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (_TempChangeWeather != _ChangeWeather)
+        {
+            ChangeWeatherByIndex(_ChangeWeather);
+            _TempChangeWeather = _ChangeWeather; 
+        }
         ChangeWeatherByIndex(_ChangeWeather);
         if (_ChangeTime >= 0 && _ChangeTime < 5)
         {
@@ -62,6 +72,8 @@ public class ChangeWeather : MonoBehaviour
         }
 
         profile.SetWeatherWeight(1.0f);
+
+        weatherModule.UpdateWeatherWeights();
         weatherModule.PropogateVariables();
     }
     public void ChangeWeatherByIndex(int index)

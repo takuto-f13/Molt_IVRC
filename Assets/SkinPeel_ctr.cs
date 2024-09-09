@@ -18,6 +18,7 @@ public class SkinPeel_ctr : MonoBehaviour
     [SerializeField] private float dis_the = 0.25f;
 
     [SerializeField] PlaneController PlaneController;
+    [SerializeField] private Transform _AimObject;
 
     private Vector3 lastPosition;
     private Vector3 initialPosition;
@@ -108,8 +109,27 @@ public class SkinPeel_ctr : MonoBehaviour
                     }
 
                     skin_object.localScale = new Vector3(distance, skin_object.localScale.y, skin_object.localScale.z);
-                    skin_object.localPosition = new Vector3(initialPosition.x, initialPosition.y, distance * 4.65f + border_object.position.z);
+                    skin_object.localPosition = new Vector3(initialPosition.x, initialPosition.y, distance * 5.2f + border_object.position.z);
 
+                    break;
+                case 6:
+                    distance = Vector3.Distance(border_object.position, _AimObject.position) / 2;
+                    if (savedistance < distance)
+                    {
+                        savedistance = distance;
+                    }
+
+                    PlaneController.ChangeSag = distance / savedistance;
+                    //Debug.Log(PlaneController.ChangeSag);
+
+                    //Debug.Log(distance);
+                    if (distance < dis_the)
+                    {
+                        PlaneController.ChangeSag = -0.07f;
+                    }
+
+                    skin_object.localScale = new Vector3(distance, skin_object.localScale.y, skin_object.localScale.z);
+                    skin_object.localPosition = new Vector3(initialPosition.x, initialPosition.y, distance * 5.3f + border_object.position.z);
                     break;
             }
         }
