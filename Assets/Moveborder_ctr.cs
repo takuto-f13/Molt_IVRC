@@ -2,6 +2,7 @@ using RootMotion.Demos;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Valve.VR;
 using Valve.VR.InteractionSystem;
 
@@ -34,6 +35,12 @@ public class Moveborder_ctr : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            targetObject.position = this.transform.position;
+        }
+
         //‰ñ“]‚Ì“¯Šú
         float controllerRotationX = targetObject_rotation.localEulerAngles.x;
         Vector3 this_rotation = this.transform.localEulerAngles;

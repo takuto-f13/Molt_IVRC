@@ -36,6 +36,7 @@ public class SkinPeel_ctr : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (triggerAction.GetState(handType)||_ChengeEnabled)
         {
             // border‚ÌˆÚ“®‹——£‚ðŒvŽZ
